@@ -28,6 +28,7 @@ namespace Conceito
                 WriteLine("");
 
                 WriteLine("Dados do item: " + i);
+
                 WriteLine("");
 
                 Write("Digite o numero de itens a ser adicionado ao inventario: ");
