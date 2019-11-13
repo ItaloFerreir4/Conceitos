@@ -9,11 +9,38 @@ namespace Conceito
 {
     class Item
     {
-        public string NomeItem;
-        public double ValorItem;
-        public int QuantidadeItem;
+        //Variaveis locais / atributos
+        private string nomeItem;
+        private double valorItem;
+        private int quantidadeItem;
 
-        public double AtualizaIventario()
+        
+        public string NomeItem { get => nomeItem; set => nomeItem = value; }
+        public double ValorItem { get => valorItem; set => valorItem = value; }
+        public int QuantidadeItem { get => quantidadeItem; set => quantidadeItem = value; }
+
+        public Item(string nomeItem)
+        {
+            NomeItem = nomeItem;
+        }
+
+        public Item(double valorItem)
+        {
+            ValorItem = valorItem;
+        }
+
+        public Item(int quantidadeItem)
+        {
+            QuantidadeItem = quantidadeItem;
+        }
+
+        public Item(string nomeItem, double valorItem, int quantidadeItem) : this(nomeItem)
+        {    
+            ValorItem = valorItem;
+            QuantidadeItem = quantidadeItem;
+        }
+
+        public double AtualizaIventario() // Assinatura do metodo
         {
             return ValorItem * QuantidadeItem;
         }
@@ -26,7 +53,7 @@ namespace Conceito
             QuantidadeItem -= quantidade;
         }
 
-        public override string ToString()
+        public override string ToString() // Sobrescrever. Virtual || abstrat
         {
             return NomeItem
                 + ", $"
